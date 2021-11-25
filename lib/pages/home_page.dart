@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:movieapp/controllers/movie_controller.dart';
 import 'package:movieapp/models/movies_model.dart';
 import 'package:movieapp/repositories/movies_repository_imp.dart';
 import 'package:movieapp/service/dio_service_imp.dart';
+import 'package:movieapp/widgets/custom_list_card_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,15 +20,38 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ValueListenableBuilder<Movies?>(
-            valueListenable: _controller.movies,
-            builder: (_, movies, __) {
-              return movies != null
-                  ? ListView.builder(
-                      itemCount: movies.ListMovies.length,
-                      itemBuilder: (_, idx) =>
-                          Text(movies.ListMovies[idx].title))
-                  : Container();
-            }));
+        body: Padding(
+      padding: const EdgeInsets.all(28),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 40),
+            ValueListenableBuilder<Movies?>(
+                valueListenable: _controller.movies,
+                builder: (_, movies, __) {
+                  return Visibility(
+                      visible: movies != null,
+                      child: Text('Movies',
+                          style: Theme.of(context).textTheme.headline3));
+                }),
+            ValueListenableBuilder<Movies?>(
+                valueListenable: _controller.movies,
+                builder: (_, movies, __) {
+                  return movies != null
+                      ? ListView.separated(
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: movies.ListMovies.length,
+                          itemBuilder: (_, idx) => CustomListCardWidget(
+                              movie: movies.ListMovies[idx]),
+                          separatorBuilder: (_, __) => Divider(),
+                        )
+                      : Lottie.asset('assets/lottie.json');
+                }),
+          ],
+        ),
+      ),
+    ));
   }
 }
