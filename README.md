@@ -1,16 +1,56 @@
-# movieapp
+<h1 align="center">
+  <img alt="letmeask" src=".github/Screenshot_20211124_175412.png" width="1280px" /> 
+  <br />
+  <br />
+   Flutter | MovieApp  
+</h1>
 
-A new Flutter project.
+## :bookmark: Resume
+<br />
+Creation of an application made in flutter with the help of API's whose intention is to list movie titles, and show information about the movie/series, in a list that is saved in cache to be shown offline
+<br />
 
-## Getting Started
+## :bulb: Contents covered
+<br />
 
-This project is a starting point for a Flutter application.
+- Flutter
+- Dio API
+- Lottie
+- Shared preferences
+- Repository Pattern
 
-A few resources to get you started if this is your first Flutter project:
+<br />
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## :wrench: Putting the project to run
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+First, correctly configure the Flutter development environment on your maruina, see: https://flutter.dev/docs/get-started/install
+
+- Clone this repository:
+$ git clone https://github.com/JhonataAugust0/movieapp.git
+
+- Enter the directory:
+$ cd movieapp
+
+- Install dependencies:
+$ flutter pub get
+
+- Launch the app: 
+$ flutter run
+```
+
+<br />
+
+## :memo: License
+
+This project is under the [MIT license](LICENSE) for more details.
+<br />
+<br />
+
+## :wave: Social
+
+Follow @Jhonata on the networks :wink:
+<br />
+
+- [LinkedIn](https://www.linkedin.com/in/jhonata-augusto-2301541b5/)
+
